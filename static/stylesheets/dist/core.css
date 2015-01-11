@@ -1,0 +1,193 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #258fb8;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  color: #333;
+  padding: 0 1rem;
+}
+
+#header {
+  border-bottom: .1rem solid #ddd;
+}
+#header .container {
+  max-width: 64rem;
+  margin: 0 auto;
+  position: relative;
+}
+#header .container h1 a {
+  line-height: 6rem;
+  font-size: 2rem;
+  color: black;
+}
+
+#nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto 0;
+  height: 2.4rem;
+}
+@media screen and (max-width: 500px) {
+  #nav {
+    line-height: 2.4rem;
+    height: 2.4rem;
+    position: static;
+    text-align: right;
+  }
+}
+#nav li {
+  font-size: .9rem;
+  display: inline-block;
+}
+#nav li a {
+  display: block;
+  padding: 0 1.5rem;
+  line-height: 2.4rem;
+  height: 2.4rem;
+}
+#nav li.current a {
+  font-weight: bold;
+}
+
+#main {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3rem;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+#page {
+  float: left;
+  line-height: 1.71em;
+  width: 70%;
+  padding-top: .6rem;
+  background-color: white;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#page h2, #page h3, #page h4, #page h5, #page h6, #page p {
+  margin: 1.2em 0;
+}
+#page h2 {
+  font-size: 2em;
+}
+#page h3 {
+  font-size: 1.5em;
+}
+#page h4 {
+  font-size: 1.2em;
+}
+#page ul {
+  margin-left: 1em;
+}
+#page ul li {
+  margin: .6em 0;
+}
+#page strong {
+  font-weight: bold;
+}
+#page pre > code {
+  display: block;
+  background-color: #f8f8f8;
+  padding: 1em;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  font-size: .8rem;
+  line-height: 1.2em;
+  overflow: auto;
+  -webkit-text-size-adjust: none;
+}
+
+#aside {
+  float: right;
+  width: 30%;
+  padding-left: 3rem;
+  font-size: .9rem;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 1rem;
+  line-height: 1.71em;
+}
+#aside h2 {
+  margin: 1.7rem 0;
+}
+#aside p {
+  margin: 1.5em 0;
+}
+
+@media screen and (max-width: 768px) {
+  #page, #aside {
+    width: 100%;
+    position: static;
+  }
+
+  #aside {
+    padding-left: 0;
+  }
+}

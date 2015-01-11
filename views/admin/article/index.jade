@@ -1,0 +1,7 @@
+extends ../_layout.jade
+
+block body
+	form(method='post', action='/admin/article/create')
+		input(type='text', name='title')
+		textarea(name="content")
+		input(type='submit')
