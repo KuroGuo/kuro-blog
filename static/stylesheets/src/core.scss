@@ -23,23 +23,15 @@ body {
   z-index: 99999;
   background-color: white;
   line-height: 1.71em;
-  font-size: 1.5rem;
-
-  @media screen and (max-width: 768px) {
-    font-size: 1rem;
-  }
-
-  @media screen and (max-width: 500px) {
-    font-size: .8rem;
-  }
+  font-size: 30px;
 
   .container {
     position: absolute;
     width: 28em;
-    top: 25%;
-    left: 0;
-    right: 0;
-    margin: auto;
+    left: 50%;
+    top: 50%;
+    margin-left: -14em;
+    margin-top: -6em;
   }
 
   h1 {
