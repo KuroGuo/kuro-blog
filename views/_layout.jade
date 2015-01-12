@@ -1,34 +1,34 @@
 doctype html
 html
-	head
-		meta(charset='utf-8')
-		meta(name='viewport', content='width=device-width,initial-scale=1.0,user-scalable=no')
-		title= pageTitle ? pageTitle + ' - Kuro的博客' : 'Kuro的博客'
-		link(rel='stylesheet', href='/static/stylesheets/dist/core.css')
-		block head
-	body
-		header#header
-			.container
-				h1
-					a(href='/') Kuro的博客
-				include ./common/nav.jade
-		#main
-			#page
-				block page
-			aside#aside
-				h2 郭俊燊
-				p 生于 1993.6.11，家乡四川自贡，现居于广西桂林，英文名 Kuro
-				ul
-					li 大学退学
-					li 全栈开发者
-					li
-						a(href='http://iro.im/', target='_blank') iro
-						|  创始人
-					li
-						a(href='http://www.guetsec.org/' target='_blank') GUET SEC 
-						| 成员
-					li 
-						a(href='https://github.com/', target='_blank') Github
-						|  深度用户
-					li 二次元爱好者
-		script(src='/static/scripts/dist/core.js')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1.0,user-scalable=no')
+    title= pageTitle ? pageTitle + ' - Kuro的博客' : 'Kuro的博客'
+    link(rel='stylesheet', href='/static/stylesheets/dist/core.css')
+    block head
+  body
+    header#header
+      .container
+        h1
+          a(href='/') Kuro的博客
+        include ./common/nav.jade
+    #main
+      #page
+        block page
+      aside#aside
+        h2 郭俊燊
+        p 生于 1993.6.11，家乡四川自贡，现居于广西桂林，英文名 Kuro
+        ul
+          li 大学退学
+          li 全栈开发者
+          li
+            a(href='http://iro.im/', target='_blank') iro
+            |  创始人
+          li
+            a(href='http://www.guetsec.org/' target='_blank') GUET SEC 
+            | 成员
+          li 
+            a(href='https://github.com/', target='_blank') Github
+            |  深度用户
+          li 二次元爱好者
+    script(src='/static/scripts/dist/core.js')

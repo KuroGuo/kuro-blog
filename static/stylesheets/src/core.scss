@@ -3,156 +3,157 @@
 @import "common.scss";
 
 a {
-	text-decoration: none;
-	color: #258fb8;	
+  text-decoration: none;
+  color: #258fb8; 
 }
 
 body {
-	font-size: 15px;
-	font-family: $font-stack;
-	color: #333;
-	padding: 0 1rem;
+  font-size: 15px;
+  font-family: $font-stack;
+  color: #333;
+  padding: 0 1rem;
 }
 
 #header {
-	border-bottom: .1rem solid #ddd;
+  border-bottom: .1rem solid #ddd;
+  display: block;
 
-	.container {
-		max-width: 64rem;
-		margin: 0 auto;
-		position: relative;
+  .container {
+    max-width: 64rem;
+    margin: 0 auto;
+    position: relative;
 
-		h1 {
-			a {
-				line-height: 6rem;
-				font-size: 2rem;
-				color: black;
-			}
-		}	
-	}
+    h1 {
+      a {
+        line-height: 6rem;
+        font-size: 2rem;
+        color: black;
+      }
+    } 
+  }
 }
 
 #nav {
-	$border-width: .1rem;
-	$height: 2.4rem;
+  $border-width: .1rem;
+  $height: 2.4rem;
 
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	margin: auto 0;
-	height: $height;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto 0;
+  height: $height;
 
-	@media screen and (max-width: 500px) {
-		line-height: $height;
-		height: $height;
-		position: static;
-		text-align: right;
-	}
+  @media screen and (max-width: 500px) {
+    line-height: $height;
+    height: $height;
+    position: static;
+    text-align: right;
+  }
 
-	li {
-		font-size: .9rem;
-		display: inline-block;
-		a {
-			display: block;
-			padding: 0 1.5rem;
-			line-height: $height;
-			height: $height;
-		}
+  li {
+    font-size: .9rem;
+    display: inline-block;
+    a {
+      display: block;
+      padding: 0 1.5rem;
+      line-height: $height;
+      height: $height;
+    }
 
-		&.current a {
-			font-weight: bold;
-		}
-	}
+    &.current a {
+      font-weight: bold;
+    }
+  }
 }
 
 #main {
-	$page-padding-x: 3rem;
-	$page-padding-y: 2rem;
-	position: relative;
-	overflow: hidden;
-	padding-bottom: 3rem;
+  $page-padding-x: 3rem;
+  $page-padding-y: 2rem;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3rem;
 
-	@include box-sizing(border-box);
-	max-width: 64rem;
-	margin: 0 auto;
+  @include box-sizing(border-box);
+  max-width: 64rem;
+  margin: 0 auto;
 }
 
 $aside-width: 30%;
 
 #page {
-	float: left;
-	line-height: 1.71em;
-	width: 100% - $aside-width;
-	padding-top: .6rem;
-	background-color: white;
-	@include box-sizing(border-box);
+  float: left;
+  line-height: 1.71em;
+  width: 100% - $aside-width;
+  padding-top: .6rem;
+  background-color: white;
+  @include box-sizing(border-box);
 
-	h2, h3, h4, h5, h6, p {
-		margin: 1.2em 0;
-	}
+  h2, h3, h4, h5, h6, p {
+    margin: 1.2em 0;
+  }
 
-	h2 {
-		font-size: 2em;
-	}
+  h2 {
+    font-size: 2em;
+  }
 
-	h3 {
-		font-size: 1.5em;
-	}
+  h3 {
+    font-size: 1.5em;
+  }
 
-	h4 {
-		font-size: 1.2em;
-	}
+  h4 {
+    font-size: 1.2em;
+  }
 
-	ul {
-		margin-left: 1em;
-		li {
-			margin: .6em 0;
-		}
-	}
+  ul {
+    margin-left: 1em;
+    li {
+      margin: .6em 0;
+    }
+  }
 
-	strong {
-		font-weight: bold;
-	}
+  strong {
+    font-weight: bold;
+  }
 
-	pre > code {
-		display: block;
-		background-color: #f8f8f8;
-		padding: 1em;
-		// border-left: .2em solid #69c;
-		font-family: Monaco, Consolas, "Lucida Console", monospace;
-		font-size: .8rem;
-		line-height: 1.2em;
-		overflow: auto;
-		-webkit-text-size-adjust: none;
-	}
+  pre > code {
+    display: block;
+    background-color: #f8f8f8;
+    padding: 1em;
+    // border-left: .2em solid #69c;
+    font-family: Monaco, Consolas, "Lucida Console", monospace;
+    font-size: .8rem;
+    line-height: 1.2em;
+    overflow: auto;
+    -webkit-text-size-adjust: none;
+  }
 }
 
 #aside {
-	float: right;
-	width: $aside-width;
-	padding-left: 3rem;
-	font-size: .9rem;
-	@include box-sizing(border-box);
-	padding-top: 1rem;
-	line-height: 1.71em;
+  float: right;
+  width: $aside-width;
+  padding-left: 3rem;
+  font-size: .9rem;
+  @include box-sizing(border-box);
+  padding-top: 1rem;
+  line-height: 1.71em;
 
-	h2 {
-		margin: 1.7rem 0;
-	}
+  h2 {
+    margin: 1.7rem 0;
+  }
 
-	p {
-		 margin: 1.5em 0;
-	}
+  p {
+     margin: 1.5em 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
-	#page, #aside {
-		width: 100%;
-		position: static;
-	}
+  #page, #aside {
+    width: 100%;
+    position: static;
+  }
 
-	#aside {
-		padding-left: 0;
-	}
+  #aside {
+    padding-left: 0;
+  }
 }

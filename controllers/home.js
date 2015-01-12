@@ -12,24 +12,24 @@ marked.setOptions({
 });
 
 exports.index = function (req, res, next) {
-	article.query(null, 3, function (err, articles) {
-		if (err) {
-			return next(err);
-		}
+  article.query(null, 3, function (err, articles) {
+    if (err) {
+      return next(err);
+    }
 
-		articles.forEach(function (article) {
-			article.content = marked(article.content);
-		});
+    articles.forEach(function (article) {
+      article.content = marked(article.content);
+    });
 
-		res.render('index', {
-			articles: articles,
-			current: 'home'
-		});
-	});
+    res.render('index', {
+      articles: articles,
+      current: 'home'
+    });
+  });
 };
 
 exports.aboutMe = function (req, res) {
-	res.render('about_me', {
-		current: 'about_me'
-	});
+  res.render('about_me', {
+    current: 'about_me'
+  });
 };

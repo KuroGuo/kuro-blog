@@ -1,6 +1,1 @@
-var kuroBlog = {};
-
-(function (exports) {
-	'use strict';
-	
-})(kuroBlog.base = {});
+var kuroBlog={};!function(){"use strict"}(kuroBlog.base={});
