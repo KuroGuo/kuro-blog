@@ -14,6 +14,44 @@ body {
   padding: 0 1rem;
 }
 
+#browser_too_old {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background-color: white;
+  line-height: 1.71em;
+  font-size: 1.5rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: .8rem;
+  }
+
+  .container {
+    position: absolute;
+    width: 28em;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  a {
+    cursor: pointer;
+  }
+}
+
 #header {
   border-bottom: .1rem solid #ddd;
   display: block;
