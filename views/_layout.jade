@@ -7,7 +7,7 @@ html
     link(rel='stylesheet', href='/static/stylesheets/dist/core.css')
     block head
   body
-    //- | <!--[if lte IE 8]>
+    | <!--[if lte IE 8]>
     #browser_too_old
       .container
         h1 Kuro不喜欢和数字难民打交道
@@ -15,7 +15,7 @@ html
           | 如果你不想被世界抛弃，请升级你的浏览器<br />
           | 如果你确实因为一些原因用不了现代浏览器也可以
           a(onclick='document.getElementById("browser_too_old").remove()') 临时查看
-    //- | <![endif]-->
+    | <![endif]-->
     header#header
       .container
         h1
