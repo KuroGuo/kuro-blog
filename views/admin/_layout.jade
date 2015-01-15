@@ -1,8 +1,23 @@
 doctype html
 html
-	head
-		meta(charset='utf-8')
-		title= pageTitle ? pageTitle + ' - 管理后台 - Kuro的博客' : pageTitle
-		block head
-	body
-		block body
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1.0,user-scalable=no')
+    title= pageTitle ? pageTitle + ' - 管理后台 - Kuro的博客' : pageTitle
+    link(rel='stylesheet', href='/static/stylesheets/dist/admin/core.css')
+    block head
+  body
+    nav#nav
+      ul
+        li
+          a(href='/adnia/article/create', class=current==='create'?'current':'') 写文章
+        li
+          a(href='/adnia/article/draft', class=current==='draft'?'current':'') 草稿
+        li
+          a(href='/adnia/article/list', class=current==='list'?'current':'') 已发布
+        li
+          a(href='/adnia/article/recycle', class=current==='recycle'?'current':'') 回收站
+    #main
+      block main
+    block scripts
+      script(src='/static/scripts/dist/admin/core.js')

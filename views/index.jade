@@ -8,5 +8,5 @@ block page
 	each article in articles
 		.article
 			h3.title
-				a= article.title
+				a(href='/note/' + article._id)= article.title
 			.content!= article.content

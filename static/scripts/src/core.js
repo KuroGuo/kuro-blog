@@ -1,6 +1,5 @@
 var kuroBlog = {};
 
-(function (exports) {
-	'use strict';
+;(function (exports) { 'use strict';
 	
-})(kuroBlog.base = {});
+})(kuroBlog.core = {});

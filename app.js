@@ -10,6 +10,7 @@ var app = express();
 var MongoStore = require('connect-mongo')(session);
 var webRouter = require('./web_router');
 var path = require('path');
+var errorhandler = require('./middlewares/errorhandler');
 
 mongoose.connection.on('error', function (err) {
 	console.error(err);
@@ -34,6 +35,8 @@ app.use(session({
 }));
 
 app.use(webRouter);
+
+app.use(errorhandler);
 
 app.listen(config.port, function () {
 	console.log('Listenning port ' + config.port);

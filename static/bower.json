@@ -1,0 +1,24 @@
+{
+  "name": "kuro-blog",
+  "version": "0.0.1",
+  "homepage": "https://github.com/KuroGuo/kuro-blog",
+  "authors": [
+    "KuroGuo <413298956@qq.com>"
+  ],
+  "description": "My blog",
+  "keywords": [
+    "kuro"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "marked": "~0.3.2",
+    "codemirror": "~4.11.0"
+  }
+}

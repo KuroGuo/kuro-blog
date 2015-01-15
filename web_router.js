@@ -2,16 +2,21 @@
 
 var router = require('express').Router();
 
+var auth = require('./middlewares/auth');
+
 var home = require('./controllers/home');
-var adminHome = require('./controllers/admin/home');
+var article = require('./controllers/article');
+var admin = require('./controllers/admin/home');
 var adminArticle = require('./controllers/admin/article');
 
 router.get('/', home.index);
-
+router.get('/note/:id', article.view)
 router.get('/about_me', home.aboutMe);
 
-router.get('/admin', adminHome.index);
-router.get('/admin/article', adminArticle.index);
-router.post('/admin/article/create', adminArticle.create);
+router.get('/adnia', auth.verify, admin.index);
+router.get('/adnia/login', admin.loginView);
+router.post('/adnia/login', admin.login);
+router.get('/adnia/article/create', auth.verify, adminArticle.createView);
+router.post('/adnia/article/create', auth.verify, adminArticle.create);
 
 module.exports = router;

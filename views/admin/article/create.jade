@@ -1,0 +1,21 @@
+extends ./_layout.jade
+
+append head
+  link(rel='stylesheet', href='/static/bower_components/codemirror/lib/codemirror.css')
+  link(rel='stylesheet', href='/static/stylesheets/dist/admin/article/create.css')
+
+append scripts
+  script(src='/static/bower_components/codemirror/lib/codemirror.js')
+  script(src='/static/bower_components/codemirror/keymap/sublime.js')
+  script(src='/static/bower_components/codemirror/mode/markdown/markdown.js')
+  script(src='/static/scripts/dist/admin/article/create.js')
+
+block main
+  form#form_create(method='post', action='/adnia/article/create', target="_blank")
+    input(type='text', name='title', class='textbox-title', placeholder='标题', required)
+    .markdown-editor(class='edit')
+      textarea(name='content', class='textarea-content')
+      .preview(class='textarea')
+    input(type='submit', class='btn btn-submit', value='提交')
+    input(type='submit', name='save_as_draft' class='btn btn-draft', value='存为草稿')
+    input(type='submit', name='preview', class='btn btn-preview', value='预览')

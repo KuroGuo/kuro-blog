@@ -1,1 +1,1 @@
-var kuroBlog={};!function(){"use strict"}(kuroBlog.base={});
+var kuroBlog={};!function(){"use strict"}(kuroBlog.core={});

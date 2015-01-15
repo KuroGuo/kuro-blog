@@ -1,0 +1,81 @@
+@import "compass/reset";
+@import "compass/css3";
+
+body {
+  font-size: 15px;
+  color: #333;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input, button, textarea, .textarea, .markdown-editor {
+  font-size: inherit;
+  color: inherit;
+  outline: none;
+  border: .1rem solid #333;
+  background-color: white;
+}
+input::-moz-focus-inner, button::-moz-focus-inner {
+  border: none;
+}
+input, textarea, .textarea, .markdown-editor {
+  @include box-sizing(border-box);
+  padding: 0 .6em;
+  margin-bottom: 1rem;
+}
+input {
+  line-height: 2.2em;
+  height: 2.2em;
+}
+textarea, .textarea, .markdown-editor {
+  padding: .6em;
+  min-height: 20em;
+  resize: none;
+} 
+.markdown-editor {
+  padding: .3em;
+}
+
+.btn {
+  width: auto;
+  height: 2.3em;
+  padding: 0 1.5em;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ccc;
+  }
+
+  &:active {
+    border-color: transparent;
+    background-color: #333;
+    color: white;
+  }
+}
+
+$nav-height: 2.2rem;
+
+#nav {
+  height: $nav-height;
+  line-height: $nav-height;
+  background-color: #333;
+  color: white;
+
+  li {
+    display: inline-block;
+    a {
+      display: block;
+      padding: 0 1em;
+      height: $nav-height;
+      line-height: $nav-height;
+
+      &.current {
+        background-color: white;
+        color: #333;
+      }
+    }
+  }
+}

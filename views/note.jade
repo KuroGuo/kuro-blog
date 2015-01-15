@@ -1,0 +1,10 @@
+extends ./_layout.jade
+
+append head
+  link(rel='stylesheet', href='/static/stylesheets/dist/note.css')
+  link(rel='stylesheet', href='/static/stylesheets/dist/highlight.css')
+
+block page
+  .article
+    h3.title= article.title
+    .content!= article.content

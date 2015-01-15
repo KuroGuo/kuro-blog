@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1.0,user-scalable=no')
+    title= '登录 - 管理后台 - Kuro的博客'
+    link(rel='stylesheet', href='/static/stylesheets/dist/admin/login.css')
+  body
+    #container
+      form#form_login(method='post' action='/adnia/login')
+        input(name='name', type='text', placeholder='account name', required, class='textbox')
+        input(name='pwd', type='password', placeholder='password', required, class='textbox')
+        input(type='submit', class='btn-submit', value='submit')
