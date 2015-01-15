@@ -8,7 +8,8 @@ exports.list = function (req, res) {
 
 exports.createView = function (req, res) {
   res.render('admin/article/create', {
-    current: 'create'
+    current: 'create',
+    pageTitle: '写文章'
   });
 };
 
@@ -16,6 +17,10 @@ exports.create = function (req, res, next) {
   var title = req.body.title;
   var content = req.body.content;
   var publish = !req.body.save_as_draft;
+
+  if (!title || !content) {
+    return res.send('标题和内容都不能留空啊，喂');
+  }
 
   if (req.body.preview) {
     res.render('note', {
