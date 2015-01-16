@@ -4,6 +4,7 @@ var article = require('../services/article');
 var marked = require('marked');
 var pygmentizeBundled = require('pygmentize-bundled');
 var highlightJS = require('highlight.js');
+var date = require('../util/date');
 
 marked.setOptions({
   highlight: function (code) {
@@ -17,12 +18,17 @@ exports.index = function (req, res, next) {
       return next(err);
     }
 
-    articles.forEach(function (article) {
-      article.content = marked(article.content);
+    var viewArticles = articles.map(function (article) {
+      return {
+        _id: article._id,
+        title: article.title,
+        content: marked(article.content),
+        createTime: date.toDateString(article.createTime)
+      };
     });
 
     res.render('index', {
-      articles: articles,
+      articles: viewArticles,
       current: 'home'
     });
   });

@@ -2,6 +2,11 @@
 @import "common.scss";
 
 #page {
+  .article {
+    padding-bottom: 1rem;
+    border-bottom: .1rem solid #ccc;
+  }
+
 	.title {
 		font-size: 1.4rem;
 		margin: 2rem 0;

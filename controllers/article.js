@@ -2,14 +2,19 @@
 
 var article = require('../services/article.js');
 var marked = require('marked');
+var date = require('../util/date');
 
 exports.view = function (req, res) {
   var id = req.params.id;
 
   article.findOneById(id, function (err, article) {
-    article.content = marked(article.content);
     res.render('note', {
-      article: article
+      article: {
+        _id: article._id,
+        title: article.title,
+        content: marked(article.content),
+        createTime: date.toDateString(article.createTime)
+      }
     });
   });
 };

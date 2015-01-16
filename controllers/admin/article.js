@@ -1,6 +1,8 @@
 'use strict';
 
 var article = require('../../services/article');
+var marked = require('marked');
+var date = require('../../util/date');
 
 exports.list = function (req, res) {
 	res.render('admin/article/list');
@@ -26,7 +28,8 @@ exports.create = function (req, res, next) {
     res.render('note', {
       article: {
         title: title,
-        content: content
+        content: marked(content),
+        createTime: date.toDateString(new Date())
       }
     });
   } else {

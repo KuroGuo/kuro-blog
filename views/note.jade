@@ -8,3 +8,5 @@ block page
   .article
     h3.title= article.title
     .content!= article.content
+    .datetime 本条目发布于 
+      span= article.createTime
