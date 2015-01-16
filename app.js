@@ -13,7 +13,7 @@ var path = require('path');
 var errorhandler = require('./middlewares/errorhandler');
 
 mongoose.connection.on('error', function (err) {
-	console.error(err);
+  console.error(err);
 });
 
 mongoose.connect(config.db);
@@ -28,10 +28,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 app.use(session({
-	secret: config.sessionSecret,
-	resave: true,
-	saveUninitialized: true,
-	store: new MongoStore({ db: mongoose.connection.db })
+  secret: config.sessionSecret,
+  resave: true,
+  saveUninitialized: true,
+  store: new MongoStore({ db: mongoose.connection.db })
 }));
 
 app.use(webRouter);
@@ -39,5 +39,5 @@ app.use(webRouter);
 app.use(errorhandler);
 
 app.listen(config.port, function () {
-	console.log('Listenning port ' + config.port);
+  console.log('Listenning port ' + config.port);
 });
