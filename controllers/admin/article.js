@@ -45,3 +45,10 @@ exports.create = function (req, res, next) {
     });
   }
 };
+
+exports.draft = function (req, res) {
+  res.render('admin/article/draft', {
+    current: 'draft',
+    pageTitle: '草稿'
+  });
+};

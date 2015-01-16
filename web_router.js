@@ -18,5 +18,6 @@ router.get('/adnia/login', admin.loginView);
 router.post('/adnia/login', admin.login);
 router.get('/adnia/article/create', auth.verify, adminArticle.createView);
 router.post('/adnia/article/create', auth.verify, adminArticle.create);
+router.get('/adnia/article/draft', auth.verify, adminArticle.draft);
 
 module.exports = router;
