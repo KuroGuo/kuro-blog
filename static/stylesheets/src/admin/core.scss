@@ -1,8 +1,11 @@
 @import "compass/reset";
 @import "compass/css3";
 
+html {
+  font-size: 16px;
+}
+
 body {
-  font-size: 15px;
   color: #333;
 }
 
@@ -24,7 +27,7 @@ input::-moz-focus-inner, button::-moz-focus-inner {
 input, textarea, .textarea, .markdown-editor {
   @include box-sizing(border-box);
   padding: 0 .6em;
-  margin-bottom: 1rem;
+  margin-bottom: .8rem;
 }
 input {
   line-height: 2.2em;

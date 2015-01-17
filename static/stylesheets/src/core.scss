@@ -2,16 +2,19 @@
 @import "compass/css3";
 @import "common.scss";
 
-a {
-  text-decoration: none;
-  color: #258fb8; 
+html {
+  font-size: 16px;
 }
 
 body {
-  font-size: 15px;
   font-family: $font-stack;
   color: #333;
   padding: 0 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #258fb8; 
 }
 
 #browser_too_old {
@@ -44,12 +47,14 @@ body {
   }
 }
 
+$width: 48rem;
+
 #header {
   border-bottom: .1rem solid #ddd;
   display: block;
 
   .container {
-    max-width: 64rem;
+    max-width: $width;
     margin: 0 auto;
     position: relative;
 
@@ -109,12 +114,10 @@ body {
   margin: 0 auto;
 }
 
-$aside-width: 30%;
-
 #page {
-  float: left;
   line-height: 1.71em;
-  width: 100% - $aside-width;
+  width: $width;
+  margin: 0 auto;
   padding-top: .6rem;
   background-color: white;
   @include box-sizing(border-box);
@@ -150,7 +153,6 @@ $aside-width: 30%;
     display: block;
     background-color: #f8f8f8;
     padding: 1em;
-    // border-left: .2em solid #69c;
     font-family: Monaco, Consolas, "Lucida Console", monospace;
     font-size: .8rem;
     line-height: 1.2em;
@@ -159,31 +161,9 @@ $aside-width: 30%;
   }
 }
 
-#aside {
-  float: right;
-  width: $aside-width;
-  padding-left: 3rem;
-  font-size: .9rem;
-  @include box-sizing(border-box);
-  padding-top: 1rem;
-  line-height: 1.71em;
-
-  h2 {
-    margin: 1.7rem 0;
-  }
-
-  p {
-     margin: 1.5em 0;
-  }
-}
-
 @media screen and (max-width: 768px) {
-  #page, #aside {
+  #page {
     width: 100%;
     position: static;
-  }
-
-  #aside {
-    padding-left: 0;
   }
 }
