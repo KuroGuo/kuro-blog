@@ -13,7 +13,13 @@ marked.setOptions({
 });
 
 exports.index = function (req, res, next) {
-  article.query(null, 3, function (err, articles) {
+  article.query({
+    criteria: {
+      published: true,
+      discarded: { $ne: true }
+    },
+    count: 3
+  }, function (err, articles) {
     if (err) {
       return next(err);
     }

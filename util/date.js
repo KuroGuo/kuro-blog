@@ -8,7 +8,7 @@ exports.toDateString = function (date, separator) {
 };
 
 exports.toDateTimeString = function (date, separator) {
-  var datetimeStr = this.toDateString(date, separator) + ' ';
+  var datetimeStr = exports.toDateString(date, separator) + ' ';
   var hours = date.getHours();
   var minutes = date.getMinutes();
 

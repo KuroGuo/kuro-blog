@@ -4,10 +4,6 @@ var article = require('../../services/article');
 var marked = require('marked');
 var date = require('../../util/date');
 
-exports.list = function (req, res) {
-	res.render('admin/article/list');
-};
-
 exports.createView = function (req, res) {
   res.render('admin/article/editor', {
     current: 'create',
@@ -48,25 +44,11 @@ exports.create = function (req, res, next) {
 };
 
 exports.draft = function (req, res, next) {
-  article.query(null, 30, function (err, articles) {
-    if (err)
-      return next(err);
+  renderList(req, res, next, article.findDraft, 'draft', '草稿');
+};
 
-    var viewArticles = articles.map(function (article) {
-      return {
-        _id: article._id,
-        title: article.title,
-        createTime: date.toDateTimeString(article.createTime, '/'),
-        updateTime: date.toDateTimeString(article.updateTime, '/')
-      };
-    });
-
-    res.render('admin/article/draft', {
-      current: 'draft',
-      pageTitle: '草稿',
-      articles: viewArticles
-    });
-  });
+exports.published = function (req, res, next) {
+  renderList(req, res, next, article.findPublished, 'published', '已发布');
 };
 
 exports.edit = function (req, res, next) {
@@ -118,3 +100,52 @@ exports.update = function (req, res, next) {
     });
   }
 };
+
+exports.recycle = function (req, res, next) {
+  renderList(req, res, next, article.findDiscarded, 'recycle', '回收站');
+};
+
+exports.discard = function (req, res, next) {
+  var id = req.params.id;
+
+  article.discard(id, function (err) {
+    if (err)
+      return next(err);
+
+    res.redirect('/adnia/article/recycle');
+  });
+};
+
+exports.restore = function (req, res, next) {
+  var id = req.params.id;
+
+  article.restore(id, function (err) {
+    if (err)
+      return next(err);
+
+    res.redirect('/adnia/article/draft');
+  });
+};
+
+function renderList(req, res, next, queryFunc, current, pageTitle) {
+   queryFunc(function (err, articles) {
+    if (err)
+      return next(err);
+
+    var viewArticles = articles.map(function (article) {
+      return {
+        _id: article._id,
+        title: article.title,
+        createTime: date.toDateTimeString(article.createTime, '/'),
+        updateTime: date.toDateTimeString(article.updateTime, '/'),
+        discarded: article.discarded
+      };
+    });
+
+    res.render('admin/article/list', {
+      current: current,
+      pageTitle: pageTitle,
+      articles: viewArticles
+    });
+  });
+}

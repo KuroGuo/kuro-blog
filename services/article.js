@@ -26,24 +26,62 @@ exports.create = function (article, callback) {
   })
 };
 
-exports.updateOneById = function (id, update, callback) {
-  update.updateTime = new Date();
-
-  Article.update({ _id: id }, update, callback);
+exports.findPublished = function (callback) {
+  exports.query({
+    criteria: {
+      published: true,
+      discarded: { $ne: true }
+    },
+    sort: { updateTime: -1 },
+    count: 30
+  }, callback);
 };
 
-exports.query = function (startId, count, callback) {
-  var criteria = {published: true};
-  if (startId)
-    criteria._id = { $lt: startId }
+exports.findDraft = function (callback) {
+  exports.query({
+    criteria: {
+      published: false,
+      discarded: { $ne: true }
+    },
+    sort: { updateTime: -1 },
+    count: 30
+  }, callback);
+};
 
-  Article
-    .find(criteria)
-    .sort({ _id: -1 })
-    .limit(count)
-    .exec(callback);
+exports.findDiscarded = function (callback) {
+  exports.query({
+    criteria: { discarded: true },
+    sort: { updateTime: -1 },
+    count: 30
+  }, callback);
+};
+
+exports.discard = function (id, callback) {
+  exports.updateOneById(id, { discarded: true, published: false }, callback);
+};
+
+exports.restore = function (id, callback) {
+  exports.updateOneById(id, { discarded: false }, callback);
 };
 
 exports.findOneById = function (id, callback) {
   Article.findOne({ _id: id }, callback);
 };
+
+exports.updateOneById = function(id, update, callback) {
+  update.updateTime = new Date();
+
+  Article.update({ _id: id }, update, callback);
+}
+
+exports.query = function (options, callback) {
+  var criteria = options.criteria;
+  var sort = options.sort || { _id: -1 };
+  var count = options.count;
+
+  Article
+    .find(criteria)
+    .sort(sort)
+    .limit(count)
+    .exec(callback);
+}

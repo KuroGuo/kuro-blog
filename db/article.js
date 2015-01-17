@@ -6,7 +6,8 @@ var articleSchema = new mongoose.Schema({
 	content: String,
 	createTime: Date,
 	updateTime: Date,
-  published: Boolean
+  published: Boolean,
+  discarded: Boolean
 })
 
 module.exports = mongoose.model('Article', articleSchema);

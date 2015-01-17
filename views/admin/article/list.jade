@@ -17,3 +17,9 @@ block main
           td= article.createTime
           td= article.updateTime
           td: a(href='/note/'+article._id, target='_blank') 查看
+          if article.discarded
+            td: a(href='/adnia/restore/'+article._id, target='_blank') 恢复
+          else
+            td: a(href='/adnia/discard/'+article._id, target='_blank') 丢弃
+
+
