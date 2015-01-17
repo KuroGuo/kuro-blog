@@ -7,7 +7,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #258fb8; 
   text-decoration: none;
 }
 
@@ -62,11 +62,12 @@ $nav-height: 2.2rem;
   height: $nav-height;
   line-height: $nav-height;
   background-color: #333;
-  color: white;
 
   li {
     display: inline-block;
     a {
+      outline: none;
+      color: white;
       display: block;
       padding: 0 1em;
       height: $nav-height;

@@ -26,6 +26,12 @@ exports.create = function (article, callback) {
   })
 };
 
+exports.updateOneById = function (id, update, callback) {
+  update.updateTime = new Date();
+
+  Article.update({ _id: id }, update, callback);
+};
+
 exports.query = function (startId, count, callback) {
   var criteria = {published: true};
   if (startId)

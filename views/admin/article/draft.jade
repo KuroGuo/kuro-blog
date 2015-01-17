@@ -1,2 +1,19 @@
 extends ./_layout.jade
 
+append head
+  link(rel='stylesheet', href='/static/stylesheets/dist/admin/article/list.css')
+
+block main
+  #articles
+    table
+      tr
+        th 标题
+        th 创建时间
+        th 更新时间
+      each article in articles
+        tr
+          td
+            a(href='/adnia/article/edit/'+article._id, target='_blank')= article.title
+          td= article.createTime
+          td= article.updateTime
+          td: a(href='/note/'+article._id, target='_blank') 查看

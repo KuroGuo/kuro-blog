@@ -13,8 +13,9 @@ exports.view = function (req, res) {
         _id: article._id,
         title: article.title,
         content: marked(article.content),
-        createTime: date.toDateString(article.createTime)
-      }
+        updateTime: date.toDateString(article.updateTime)
+      },
+      pageTitle: article.title + ' - ' + '文章'
     });
   });
 };

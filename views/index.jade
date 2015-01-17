@@ -10,5 +10,5 @@ block page
       h3.title
         a(href='/note/' + article._id)= article.title
       .content!= article.content
-      .datetime 本条目发布于 
-        span= article.createTime
+      .datetime 本条目更新于 
+        span= article.updateTime

@@ -23,7 +23,7 @@ exports.index = function (req, res, next) {
         _id: article._id,
         title: article.title,
         content: marked(article.content),
-        createTime: date.toDateString(article.createTime)
+        updateTime: date.toDateString(article.updateTime)
       };
     });
 
@@ -36,6 +36,7 @@ exports.index = function (req, res, next) {
 
 exports.aboutMe = function (req, res) {
   res.render('about_me', {
-    current: 'about_me'
+    current: 'about_me',
+    pageTitle: '关于我'
   });
 };
