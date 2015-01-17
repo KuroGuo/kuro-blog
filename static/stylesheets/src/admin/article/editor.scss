@@ -4,16 +4,9 @@
   margin: 0 auto;
 
   .markdown-editor {
-    &.edit {
-      cursor: text;
-      .preview {
-        display: none;
-      }
-    }
-    &.preview {
-      .CodeMirror {
-        display: none;
-      }
+    cursor: text;
+    .preview {
+      display: none;
     }
   }
 
