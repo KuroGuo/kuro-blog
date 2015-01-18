@@ -2,10 +2,10 @@
   var marked = window.marked;
   var CodeMirror = window.CodeMirror;
 
-  var $formCreate = document.querySelector('#form_create');
-  var $markdownEditor = $formCreate.querySelector('.markdown-editor');
-  var $textareaContent = $formCreate.querySelector('.textarea-content');
-  var $preview = $formCreate.querySelector('.preview');
+  var $form = document.querySelector('#form');
+  var $markdownEditor = $form.querySelector('.markdown-editor');
+  var $textareaContent = $form.querySelector('.textarea-content');
+  var $preview = $form.querySelector('.preview');
 
   var codeMirror = CodeMirror.fromTextArea($textareaContent, {
     mode: "markdown",
@@ -21,5 +21,4 @@
     e.preventDefault();
     codeMirror.focus();
   });
-
-})(kuroBlogAdmin.article.create = {}, window, document);
+})(kuroBlogAdmin.editor= {}, window, document);

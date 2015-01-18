@@ -3,6 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width,initial-scale=1.0,user-scalable=no')
+    base(target='_blank')
     title= pageTitle ? pageTitle + ' - 管理后台 - Kuro的博客' : '管理后台 - Kuro的博客'
     link(rel='stylesheet', href='/static/stylesheets/dist/admin/core.css')
     block head
@@ -10,13 +11,15 @@ html
     nav#nav
       ul
         li
-          a(href='/adnia/article/create', class=current==='create'?'current':'') 写文章
+          a(href='/adnia/article/create', class=current==='create'?'current':'', target='_self') 写文章
         li
-          a(href='/adnia/article/draft', class=current==='draft'?'current':'') 草稿
+          a(href='/adnia/article/draft', class=current==='draft'?'current':'', target='_self') 草稿
         li
-          a(href='/adnia/article/published', class=current==='published'?'current':'') 已发布
+          a(href='/adnia/article/published', class=current==='published'?'current':'', target='_self') 已发布
         li
-          a(href='/adnia/article/recycle', class=current==='recycle'?'current':'') 回收站
+          a(href='/adnia/article/recycle', class=current==='recycle'?'current':'', target='_self') 回收站
+        li
+          a(href='/adnia/single_page', class=current==='single_page'?'single_page':'', target='_self') 独立页
     #main
       block main
     block scripts

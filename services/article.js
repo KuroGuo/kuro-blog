@@ -72,7 +72,7 @@ exports.updateOneById = function(id, update, callback) {
   update.updateTime = new Date();
 
   Article.update({ _id: id }, update, callback);
-}
+};
 
 exports.query = function (options, callback) {
   var criteria = options.criteria;

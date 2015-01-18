@@ -59,11 +59,9 @@ textarea, .textarea, .markdown-editor {
   }
 }
 
-$nav-height: 2.2rem;
+$nav-btn-height: 2.2rem;
 
 #nav {
-  height: $nav-height;
-  line-height: $nav-height;
   background-color: #333;
 
   li {
@@ -73,8 +71,8 @@ $nav-height: 2.2rem;
       color: white;
       display: block;
       padding: 0 1em;
-      height: $nav-height;
-      line-height: $nav-height;
+      height: $nav-btn-height;
+      line-height: $nav-btn-height;
 
       &.current {
         background-color: white;

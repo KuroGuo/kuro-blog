@@ -5,6 +5,7 @@ var marked = require('marked');
 var pygmentizeBundled = require('pygmentize-bundled');
 var highlightJS = require('highlight.js');
 var date = require('../util/date');
+var singlePage = require('../services/single_page');
 
 marked.setOptions({
   highlight: function (code) {
@@ -40,9 +41,21 @@ exports.index = function (req, res, next) {
   });
 };
 
-exports.aboutMe = function (req, res) {
-  res.render('about_me', {
-    current: 'about_me',
-    pageTitle: '关于我'
+exports.aboutMe = function (req, res, next) {
+  singlePage.findOneById('about_me', function (err, singlePage) {
+    if (err)
+      return next(err);
+
+    res.render('note', {
+      current: 'about_me',
+      pageTitle: '关于我',
+      hideTitle: true,
+      article: {
+        _id: singlePage._id,
+        title: singlePage.title,
+        content: marked(singlePage.content),
+        updateTime: date.toDateString(singlePage.updateTime)
+      }
+    });
   });
 };

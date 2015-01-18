@@ -8,6 +8,7 @@ var home = require('./controllers/home');
 var article = require('./controllers/article');
 var admin = require('./controllers/admin/home');
 var adminArticle = require('./controllers/admin/article');
+var adminSinglePage = require('./controllers/admin/single_page');
 
 router.get('/', home.index);
 router.get('/note/:id', article.view)
@@ -25,5 +26,8 @@ router.get('/adnia/article/published', auth.verify, adminArticle.published);
 router.get('/adnia/article/recycle', auth.verify, adminArticle.recycle);
 router.all('/adnia/discard/:id', auth.verify, adminArticle.discard);
 router.all('/adnia/restore/:id', auth.verify, adminArticle.restore);
+router.get('/adnia/single_page', auth.verify, adminSinglePage.list);
+router.get('/adnia/single_page/edit/:id', auth.verify, adminSinglePage.edit);
+router.post('/adnia/single_page/update/:id', auth.verify, adminSinglePage.update);
 
 module.exports = router;

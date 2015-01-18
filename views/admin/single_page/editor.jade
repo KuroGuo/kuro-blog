@@ -5,12 +5,11 @@ append head
   link(rel='stylesheet', href='/static/stylesheets/dist/admin/editor.css')
 
 block main
-  form#form(method='post', action='/adnia/article/'+action, target="_blank")
-    input(type='text', name='title', class='textbox-title', placeholder='标题', required, value=article&&article.title)
+  form#form(method='post', action='/adnia/single_page/'+action, target="_blank")
+    input(type='text', name='title', class='textbox-title', placeholder='标题', required, value=singlePage&&singlePage.title)
     .markdown-editor
-      textarea(name='content', class='textarea-content')= article&&article.content
-    input(type='submit', class='btn btn-submit', value='发布')
-    input(type='submit', name='save_as_draft' class='btn btn-draft', value='存为草稿')
+      textarea(name='content', class='textarea-content')= singlePage&&singlePage.content
+    input(type='submit', class='btn btn-submit', value='保存')
     input(type='submit', name='preview', class='btn btn-preview', value='预览')
 
 append scripts

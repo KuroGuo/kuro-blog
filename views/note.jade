@@ -6,7 +6,8 @@ append head
 
 block page
   .article
-    h3.title= article.title
+    if !hideTitle
+      h3.title= article.title
     .content!= article.content
     .datetime 本条目更新于 
       span= article.updateTime

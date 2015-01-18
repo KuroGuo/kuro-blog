@@ -1,0 +1,17 @@
+extends ./_layout.jade
+
+append head
+  link(rel='stylesheet', href='/static/stylesheets/dist/admin/list.css')
+
+block main
+  #list
+    table
+      tr
+        th 标题
+        th 更新时间
+      each single_page in single_pages
+        tr
+          td
+            a(href='/adnia/single_page/edit/'+single_page._id, target='_blank')= single_page.title
+          td= single_page.updateTime
+          td: a(href=single_page._id, target='_blank') 查看

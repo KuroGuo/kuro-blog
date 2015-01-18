@@ -1,1 +1,0 @@
-kuroBlogAdmin.article={},function(){"use strict"}(kuroBlogAdmin.article.core={});
