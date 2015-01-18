@@ -107,7 +107,6 @@ $width: 48rem;
   $page-padding-y: 2rem;
   position: relative;
   overflow: hidden;
-  padding-bottom: 3rem;
 
   @include box-sizing(border-box);
   max-width: 64rem;
@@ -166,4 +165,9 @@ $width: 48rem;
     width: 100%;
     position: static;
   }
+}
+
+#footer {
+  padding: 2rem 0;
+  text-align: center;
 }
