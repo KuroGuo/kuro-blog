@@ -46,6 +46,9 @@ exports.aboutMe = function (req, res, next) {
     if (err)
       return next(err);
 
+    if (!singlePage)
+      return next(new Error('不存在此独立页'));
+
     res.render('note', {
       current: 'about_me',
       pageTitle: '关于我',
