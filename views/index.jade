@@ -8,7 +8,7 @@ block page
   each article in articles
     .article
       h3.title
-        a(href='/note/' + article._id)= article.title
+        a(href='/note/' + article._id, target='_self')= article.title
       .content!= article.content
       .datetime 本条目更新于 
         span= article.updateTime
