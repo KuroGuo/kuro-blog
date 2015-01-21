@@ -13,6 +13,7 @@ var adminSinglePage = require('./controllers/admin/single_page');
 router.get('/', home.index);
 router.get('/note/:id', article.view)
 router.get('/about_me', home.aboutMe);
+router.get('/projects', home.projects);
 
 router.get('/adnia', auth.verify, admin.index);
 router.get('/adnia/login', admin.loginView);

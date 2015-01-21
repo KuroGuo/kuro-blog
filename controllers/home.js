@@ -62,3 +62,25 @@ exports.aboutMe = function (req, res, next) {
     });
   });
 };
+
+exports.projects = function (req, res, next) {
+  singlePage.findOneById('projects', function (err, singlePage) {
+    if (err)
+      return next(err);
+
+    if (!singlePage)
+      return next(new Error('不存在此独立页'));
+
+    res.render('note', {
+      current: 'projects',
+      pageTitle: '项目',
+      hideTitle: true,
+      article: {
+        _id: singlePage._id,
+        title: singlePage.title,
+        content: marked(singlePage.content),
+        updateTime: date.toDateString(singlePage.updateTime)
+      }
+    });
+  });
+};

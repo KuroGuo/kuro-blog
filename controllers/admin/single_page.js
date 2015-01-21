@@ -5,19 +5,9 @@ var date = require('../../util/date');
 var marked = require('marked');
 
 exports.list = function (req, res, next) {
-  singlePage.all(function (err, singlePages) {
+  singlePage.allAndCreate(function (err, singlePages) {
     if (err)
       return next(err);
-
-    if (!singlePages.length) {
-      singlePage.init(function (err, singlePages) {
-        if (err)
-          return next(err);
-
-        renderList(res, singlePages);
-      });
-      return;
-    }
 
     renderList(res, singlePages);
   });
