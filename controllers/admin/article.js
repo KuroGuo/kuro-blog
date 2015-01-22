@@ -23,7 +23,6 @@ exports.create = function (req, res, next) {
 
   if (req.body.preview) {
     res.render('note', {
-      current: id,
       pageTitle: title,
       article: {
         title: title,
@@ -83,7 +82,6 @@ exports.update = function (req, res, next) {
 
   if (req.body.preview) {
     res.render('note', {
-      current: id,
       pageTitle: title,
       article: {
         title: title,
