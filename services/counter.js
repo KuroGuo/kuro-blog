@@ -12,6 +12,6 @@ exports.generateId = function (name, callback) {
     if (err)
       return callback.call(this, err);
 
-    callback.call(this, null, counter.seq);
+    callback.call(this, null, counter.seq, counter);
   });
 };
