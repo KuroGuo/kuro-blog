@@ -9,5 +9,6 @@ block page
     if !hideTitle
       h3.title= article.title
     .content!= article.content
-    .datetime 本条目更新于 
-      span= article.updateTime
+    if article.updateTime
+      .datetime 本条目更新于 
+        span= article.updateTime
