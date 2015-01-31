@@ -22,6 +22,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "test": "make test",
     "debug": "node --debug app.js",
     "debug-brk": "node --debug-brk app.js"
   },
