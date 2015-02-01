@@ -10,12 +10,9 @@ describe('test/services/counter.test.js', function () {
 
     before(function (done) {
       counter.generateId('test', function (err, seq, counter) {
-        if (err)
-          return done(err);
-
         testCounter = counter;
 
-        done();
+        done(err);
       });
     });
 
@@ -25,12 +22,9 @@ describe('test/services/counter.test.js', function () {
 
     it('should generate articleId without error', function (done) {
       counter.generateId('test', function (err, seq) {
-        if (err)
-          return done(err);
-
         (seq - testCounter.seq).should.equal(1);
 
-        done();
+        done(err);
       });
     });
   })

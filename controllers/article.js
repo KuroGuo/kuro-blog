@@ -22,7 +22,7 @@ exports.view = function (req, res, next) {
         pageTitle: article.title + ' - ' + '文章'
       });  
     } else {
-      res.render('note', {
+      res.status(404).render('note', {
         article: {
           _id: 'not found',
           title: '未找到',

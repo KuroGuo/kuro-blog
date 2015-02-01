@@ -41,3 +41,5 @@ app.use(errorhandler);
 app.listen(config.port, function () {
   console.log('Listenning port ' + config.port);
 });
+
+module.exports = app;

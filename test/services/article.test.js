@@ -35,12 +35,9 @@ describe('test/services/article.test.js', function () {
         content: 'Test update.',
         published: true
       }, function (err, article) {
-        if (err)
-          return done(err);
-
         tempArticle = article;
 
-        done();
+        done(err);
       });
     });
 
@@ -52,23 +49,17 @@ describe('test/services/article.test.js', function () {
       article.query({
         criteria: { _id: tempArticle._id }
       }, function (err, dbArticle) {
-        if (err)
-          return done(err);
-
         dbArticle.length.should.be.above(0);
 
-        done();
+        done(err);
       });
     });
 
     it('should findPublished without error', function (done) {
       article.findPublished(function (err, articles) {
-        if (err)
-          return done(err);
-
         articles.length.should.above(0);
 
-        done();
+        done(err);
       });
     });
 
@@ -78,12 +69,9 @@ describe('test/services/article.test.js', function () {
           return done(err);
 
         article.findDraft(function (err, articles) {
-          if (err)
-            return done(err);
-
           articles.length.should.above(0);
 
-          done();
+          done(err);
         });
       });
     });
@@ -91,24 +79,18 @@ describe('test/services/article.test.js', function () {
     it('should findDiscarded without error', function (done) {
       article.discard(tempArticle._id, function (err) {
         article.findDiscarded(function (err, articles) {
-          if (err)
-            return done(err);
-
           articles.length.should.above(0);
 
-          done();
+          done(err);
         });
       });
     });
 
     it('should findOneById without error', function (done) {
       article.findOneById(tempArticle._id, function (err, article) {
-        if (err)
-          return done(err);
-
         article._id.should.equal(tempArticle._id);
 
-        done();
+        done(err);
       });
     });
 

@@ -52,6 +52,10 @@ exports.published = function (req, res, next) {
   renderList(req, res, next, article.findPublished, 'published', '已发布');
 };
 
+exports.recycle = function (req, res, next) {
+  renderList(req, res, next, article.findDiscarded, 'recycle', '回收站');
+};
+
 exports.edit = function (req, res, next) {
   var id = req.params.id;
 
@@ -101,10 +105,6 @@ exports.update = function (req, res, next) {
       res.redirect('/note/' + id);
     });
   }
-};
-
-exports.recycle = function (req, res, next) {
-  renderList(req, res, next, article.findDiscarded, 'recycle', '回收站');
 };
 
 exports.discard = function (req, res, next) {
