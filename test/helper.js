@@ -1,7 +1,7 @@
 'use strict';
 
-var config = require('../../../config');
-var app = require('../../../app');
+var config = require('../config');
+var app = require('../app');
 var request = require('supertest')(app);
 
 exports.login = function (callback) {

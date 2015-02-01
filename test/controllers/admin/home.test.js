@@ -2,7 +2,7 @@
 
 var config = require('../../../config');
 var should = require('should');
-var helper = require('./helper');
+var helper = require('../../helper');
 var app = require('../../../app');
 var request = require('supertest')(app);
 

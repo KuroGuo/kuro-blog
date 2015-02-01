@@ -1,7 +1,7 @@
 'use strict';
 
 var should = require('should');
-var helper = require('./helper');
+var helper = require('../../helper');
 var Article = require('../../../db/article');
 var app = require('../../../app');
 var request = require('supertest')(app);
