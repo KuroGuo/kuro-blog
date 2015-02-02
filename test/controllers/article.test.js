@@ -22,4 +22,18 @@ describe('test/controllers/article.test.js', function () {
       }
     })
   });
+
+  it('should respond 500', function (done) {
+    request
+      .get('/note/string')
+      .expect(500)
+      .end(done);
+  });
+
+  it('should respond 404', function (done) {
+    request
+      .get('/note/999999999999999999999999999999999')
+      .expect(404)
+      .end(done);
+  });
 });
