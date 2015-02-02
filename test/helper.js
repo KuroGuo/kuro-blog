@@ -13,6 +13,9 @@ exports.login = function (callback) {
     })
     .expect(302)
     .end(function (err, res) {
+      if (err)
+        return callback.call(this, err);
+
       var cookie = res.headers['set-cookie'][0].split(';')[0];
       callback.call(this, err, cookie);
     });
