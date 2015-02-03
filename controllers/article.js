@@ -67,26 +67,26 @@ exports.list = function (req, res, next) {
       if (!yearArticles) {
         yearArticles = {
           year: year,
-          articles: []
+          list: []
         };
 
         viewArticles.push(yearArticles);
       }
 
-      var monthArticles = yearArticles.articles.filter(function (monthArticles) {
+      var monthArticles = yearArticles.list.filter(function (monthArticles) {
         return monthArticles.month === month;
       })[0];
 
       if (!monthArticles) {
         monthArticles = {
           month: month,
-          articles: []
+          list: []
         };
 
-        yearArticles.articles.push(monthArticles);
+        yearArticles.list.push(monthArticles);
       }
 
-      monthArticles.articles.push(article);
+      monthArticles.list.push(article);
     });
 
     res.render('list', {

@@ -4,10 +4,10 @@ block page
   each yearArticles in articles
     h3= yearArticles.year
       | 年
-    each monthArticles in yearArticles.articles
+    each monthArticles in yearArticles.list
       h4= monthArticles.month
         | 月
-      each article in monthArticles.articles
+      each article in monthArticles.list
         .article
           h5.title
             a(href='/note/' + article._id, target='_self')= article.title
