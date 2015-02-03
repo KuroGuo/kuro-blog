@@ -79,7 +79,7 @@ $width: 48rem;
   margin: auto 0;
   height: $height;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     height: auto;
     line-height: $height;
     position: static;
@@ -91,7 +91,7 @@ $width: 48rem;
     display: inline-block;
     a {
       display: block;
-      padding: 0 1.5rem;
+      padding: 0 1.4rem;
       line-height: $height;
       height: $height;
     }
