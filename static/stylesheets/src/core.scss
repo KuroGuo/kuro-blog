@@ -80,8 +80,8 @@ $width: 48rem;
   height: $height;
 
   @media screen and (max-width: 500px) {
+    height: auto;
     line-height: $height;
-    height: $height;
     position: static;
     text-align: right;
   }

@@ -1,0 +1,13 @@
+extends ./_layout.jade
+
+block page
+  each yearArticles in articles
+    h3= yearArticles.year
+      | 年
+    each monthArticles in yearArticles.articles
+      h4= monthArticles.month
+        | 月
+      each article in monthArticles.articles
+        .article
+          h5.title
+            a(href='/note/' + article._id, target='_self')= article.title

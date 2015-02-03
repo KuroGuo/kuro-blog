@@ -7,13 +7,21 @@ var Single_page = require('../../db/single_page');
 
 describe('test/controllers/home.test.js', function () {
   describe('index', function () {
-    it('should / 200', function (done) {
-      request.get('/').end(function (err, res) {
-        res.status.should.equal(200);
-        res.text.should.containEql('的博客');
-        done(err);
-      });
+    it('should respond 200', function (done) {
+      request
+        .get('/')
+        .expect(200)
+        .end(done);
     });  
+  });
+
+  describe('list', function () {
+    it('should respond 200', function (done) {
+      request
+        .get('/list')
+        .expect(200)
+        .end(done);
+    });
   });
 
   describe('single_pages', function () {

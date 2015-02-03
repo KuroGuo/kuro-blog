@@ -1,7 +1,9 @@
 nav#nav
   ul
     li(class=current==='home'?'current':'')
-      a(href='/', target="_self") 首页
+      a(href='/', target='_self') 首页
+    li(class=current==='list'?'current':'')
+      a(href='/list', target='_self') 所有文章
     li(class=current==='projects'?'current':'')
       a(href='/projects', target='_self') 项目
     li(class=current==='about_me'?'current':'')
