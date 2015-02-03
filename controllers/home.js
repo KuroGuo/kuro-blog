@@ -41,68 +41,6 @@ exports.index = function (req, res, next) {
   });
 };
 
-exports.list = function (req, res, next) {
-  article.query({
-    criteria: {
-      published: true,
-      discarded: { $ne: true }
-    }
-  }, function (err, articles) {
-    if (err) {
-      return next(err);
-    }
-
-    articles = articles.map(function (article) {
-      return {
-        _id: article._id,
-        title: article.title,
-        createTime: article.createTime,
-        createTimeString: date.toDateString(article.createTime)
-      };
-    });
-
-    var viewArticles = [];
-
-    articles.forEach(function (article) {
-      var year = 1900 + article.createTime.getYear();
-      var month = 1 + article.createTime.getMonth();
-
-      var yearArticles = viewArticles.filter(function (yearArticles) {
-        return yearArticles.year === year;
-      })[0];
-
-      if (!yearArticles) {
-        yearArticles = {
-          year: year,
-          articles: []
-        };
-
-        viewArticles.push(yearArticles);
-      }
-
-      var monthArticles = yearArticles.articles.filter(function (monthArticles) {
-        return monthArticles.month === month;
-      })[0];
-
-      if (!monthArticles) {
-        monthArticles = {
-          month: month,
-          articles: []
-        };
-
-        yearArticles.articles.push(monthArticles);
-      }
-
-      monthArticles.articles.push(article);
-    });
-console.log(viewArticles);
-    res.render('list', {
-      articles: viewArticles,
-      current: 'list'
-    });
-  });
-};
-
 exports.aboutMe = function (req, res, next) {
   singlePage.findOneById('about_me', function (err, singlePage) {
     if (err)

@@ -15,15 +15,6 @@ describe('test/controllers/home.test.js', function () {
     });  
   });
 
-  describe('list', function () {
-    it('should respond 200', function (done) {
-      request
-        .get('/list')
-        .expect(200)
-        .end(done);
-    });
-  });
-
   describe('single_pages', function () {
     Single_page.find(function (err, single_pages) {
       if (!single_pages || !single_pages.length) {
