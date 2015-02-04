@@ -12,6 +12,7 @@ var adminSinglePage = require('./controllers/admin/single_page');
 
 router.get('/', home.index);
 router.get('/list', article.list);
+router.get('/note', article.list);
 router.get('/note/:id', article.view)
 router.get('/about_me', home.aboutMe);
 router.get('/projects', home.projects);

@@ -13,6 +13,13 @@ describe('test/controllers/article.test.js', function () {
         .expect(200)
         .end(done);
     });
+
+    it('should respond 200', function (done) {
+      request
+        .get('/note')
+        .expect(200)
+        .end(done);
+    });
   });
 
   describe('note', function () {
