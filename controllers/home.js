@@ -2,7 +2,6 @@
 
 var article = require('../services/article');
 var marked = require('marked');
-var pygmentizeBundled = require('pygmentize-bundled');
 var highlightJS = require('highlight.js');
 var date = require('../util/date');
 var singlePage = require('../services/single_page');
