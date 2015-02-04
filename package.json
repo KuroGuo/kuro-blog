@@ -12,8 +12,7 @@
     "highlight.js": "^8.4.0",
     "jade": "^1.8.2",
     "marked": "^0.3.2",
-    "mongoose": "^3.8.21",
-    "pygmentize-bundled": "^2.3.0"
+    "mongoose": "^3.8.21"
   },
   "repository": {
     "type": "git",
