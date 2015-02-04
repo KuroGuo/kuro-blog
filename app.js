@@ -36,6 +36,12 @@ app.use(session({
 
 app.use(webRouter);
 
+if (!process.env.TEST) {
+  app.use(function (req, res) {
+    res.redirect('/');
+  });
+}
+
 app.use(errorhandler);
 
 app.listen(config.port, function () {
