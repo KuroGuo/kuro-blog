@@ -31,7 +31,7 @@ app.use(session({
   secret: config.sessionSecret,
   resave: true,
   saveUninitialized: true,
-  store: new MongoStore({ db: mongoose.connection.db })
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
 app.use(webRouter);
