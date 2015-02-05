@@ -91,7 +91,8 @@ exports.list = function (req, res, next) {
 
     res.render('list', {
       articles: viewArticles,
-      current: 'list'
+      current: 'list',
+      pageTitle: '所有文章'
     });
   });
 };
