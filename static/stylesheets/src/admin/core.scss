@@ -1,5 +1,6 @@
 @import "compass/reset";
 @import "compass/css3";
+@import "../common.scss";
 
 html {
   font-size: 16px;
@@ -7,6 +8,7 @@ html {
 
 body {
   color: #333;
+  font-family: $font-stack;
 }
 
 a {
