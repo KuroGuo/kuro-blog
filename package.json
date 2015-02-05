@@ -12,7 +12,8 @@
     "highlight.js": "^8.4.0",
     "jade": "^1.9.1",
     "marked": "^0.3.3",
-    "mongoose": "^3.8.22"
+    "mongoose": "^3.8.22",
+    "multer": "^0.1.7"
   },
   "devDependencies": {
     "gulp": "^3.8.10",

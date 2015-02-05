@@ -5,6 +5,7 @@ var express = require('express');
 var session = require('express-session');
 var compression = require('compression');
 var bodyParser = require('body-parser');
+var multer = require('multer');
 var mongoose = require('mongoose');
 var app = express();
 var MongoStore = require('connect-mongo')(session);
@@ -23,9 +24,9 @@ app.set('view engine', 'jade');
 
 app.use('/static', express.static(path.join(__dirname, 'static')));
 
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(multer());
 
 app.use(session({
   secret: config.sessionSecret,
