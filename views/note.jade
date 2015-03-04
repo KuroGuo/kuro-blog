@@ -10,5 +10,6 @@ block page
       h2.title= article.title
     .content!= article.content
     if article.updateTime
-      .datetime 本条目更新于 
-        span= article.updateTime
+      .datetime
+        p 本条目更新于 
+          span= article.updateTime
