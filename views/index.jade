@@ -10,7 +10,8 @@ block page
       h3.title
         a(href='/note/' + article._id, target='_self')= article.title
       .content!= article.content
-      .datetime 本条目更新于 
-        span= article.updateTime
+      .datetime
+        p 本条目更新于 
+          span= article.updateTime
   p
     a(href='/list', target='_self') 所有文章
