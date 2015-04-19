@@ -5,9 +5,9 @@ append head
   link(rel='stylesheet', href='/static/stylesheets/dist/highlight.css')
 
 block page
-  .article
+  article.article
     if !hideTitle
-      h2.title= article.title
+      h1.title= article.title
     .content!= article.content
     if article.updateTime
       .datetime
