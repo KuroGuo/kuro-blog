@@ -11,7 +11,11 @@ block page
         a(href='/note/' + article._id, target='_self')= article.title
       .content!= article.content
       .datetime
-        p 本条目更新于 
+        p 本条目
+          if article.createTime
+            | 创建于 
+            span= article.createTime
+          | 更新于 
           span= article.updateTime
   p
     a(href='/list', target='_self') 所有文章
