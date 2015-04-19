@@ -17,7 +17,7 @@ exports.view = function (req, res, next) {
           _id: article._id,
           title: article.title,
           content: marked(article.content),
-          createTime: data.toDateString(article.createTime),
+          createTime: date.toDateString(article.createTime),
           updateTime: date.toDateString(article.updateTime)
         },
         pageTitle: article.title + ' - ' + '文章'
