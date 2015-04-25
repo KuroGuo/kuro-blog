@@ -1,7 +1,7 @@
 'use strict';
 
 var Admin = require('../db/admin');
-var crypto = require('../util/crypto');
+var crypto = require('../utils/crypto');
 
 exports.verify = function (name, pwd, callback) {
   var pwdMD5 = crypto.createMD5(pwd);

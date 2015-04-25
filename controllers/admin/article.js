@@ -2,7 +2,7 @@
 
 var article = require('../../services/article');
 var marked = require('marked');
-var date = require('../../util/date');
+var date = require('../../utils/date');
 
 exports.createView = function (req, res) {
   res.render('admin/article/editor', {

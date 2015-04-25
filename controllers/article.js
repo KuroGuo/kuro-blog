@@ -2,7 +2,7 @@
 
 var article = require('../services/article.js');
 var marked = require('marked');
-var date = require('../util/date');
+var date = require('../utils/date');
 
 exports.view = function (req, res, next) {
   var id = req.params.id;

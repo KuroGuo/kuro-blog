@@ -1,7 +1,7 @@
 'use strict';
 
 var singlePage = require('../../services/single_page');
-var date = require('../../util/date');
+var date = require('../../utils/date');
 var marked = require('marked');
 
 exports.list = function (req, res, next) {
