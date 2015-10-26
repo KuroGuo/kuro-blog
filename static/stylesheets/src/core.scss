@@ -10,11 +10,12 @@ body {
   font-family: $font-stack;
   color: #34495e;
   padding: 0 1rem;
-  font-weight: 300;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, strong {
-  font-weight: 500;
+  font-weight: bold;
 }
 
 a {
