@@ -8,13 +8,18 @@ html {
 
 body {
   font-family: $font-stack;
-  color: #333;
+  color: #34495e;
   padding: 0 1rem;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, strong {
+  font-weight: 500;
 }
 
 a {
   text-decoration: none;
-  color: #258fb8; 
+  color: #258fb8;
 }
 
 #browser_too_old {
@@ -64,7 +69,7 @@ $width: 48rem;
         font-size: 2rem;
         color: black;
       }
-    } 
+    }
   }
 }
 
